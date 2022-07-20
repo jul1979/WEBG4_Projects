@@ -9,16 +9,18 @@
     </p>
     <p>Vous pouvez aussi ajuster directement les ingrédients.</p>
     <p> Attention,changer de pizza redéfinit les ingrédients.</p>
-    <form action="">
+    <form action="" id="myform">
         @csrf
         <label for="pizzas">Choisissez une pizza:</label>
-        <select name="pizzas" id="pizzas"  class="form-select" aria-label="Default select example">
+        <div class="id_100">
+            <select name="pizzas" id="pizzas"  class="form-select" aria-label="Default select example">
             <option value=""></option>
             @foreach($pizzas as $pizza)
                 <option value="{{$pizza->pNom}}">{{$pizza->pNom}}</option>
             @endforeach
         </select>
         <br><br>
+        </div>
         <fieldset class="form-group">
             <legend class="mt-4">Ingrédients</legend>
             @foreach($ingredients as $ingredient)
