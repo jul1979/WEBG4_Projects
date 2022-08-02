@@ -12,9 +12,9 @@ class PizzaController extends Controller
     public function index()
     {
 
-        $data=Pizza::allPizzasWithGarnitures();
+        $data = Pizza::allPizzasWithGarnitures();
         //return view('pizzas',['pizzas'=>$pizzas,'garnitures'=>$garnitures]);
-        return view('pizzas',['pizzas'=>$data]);
+        return view('pizzas', ['pizzas' => $data]);
         //foreach ($pids as $pid)
         //Log::info($data);
 
@@ -22,11 +22,8 @@ class PizzaController extends Controller
 
     public static function listIngredientsApi($name)
     {
-        $ingredients=Pizza::listIngredientsByName($name);
-        $data=array_map(fn($value): string => $value->gNom,$ingredients);
-        return response()->json(['ingredients'=>$data]);
-
+        $ingredients = Pizza::listIngredientsByName($name);
+        $data = array_map(fn ($value): string => $value->gNom, $ingredients); //le deuxième paramètre représente la source des données.
+        return response()->json(['ingredients' => $data]);
     }
-
-
 }

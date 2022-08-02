@@ -24,4 +24,9 @@ class GarnitureController extends Controller
         return $data;
         //Log::info($data);
     }
+
+    public function phpinfo()
+    {
+     phpinfo();
+    }
 }

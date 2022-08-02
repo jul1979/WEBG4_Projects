@@ -21,3 +21,4 @@ Route::get('/', function () {
 Route::get('/pizzas',[PizzaController::class,'index'])->name('nosPizzas');
 Route::get('/commander',[GarnitureController::class,'index'])->name('commande');
 Route::get('/test',[GarnitureController::class, 'ingredientsData'])->name('test');
+Route::get('/phpinfo',[GarnitureController::class, 'phpinfo'])->name('phpinfo');
