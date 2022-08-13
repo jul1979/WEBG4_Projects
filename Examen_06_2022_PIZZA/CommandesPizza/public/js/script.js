@@ -1,21 +1,21 @@
 $(document).ready(function () {
-
-    $("#pizzas").change(function() {
+    $("#pizzas").change(function () {
         let selectedVal = $("#pizzas option:selected").val();
         //http://127.0.0.1:8000/api/pizza/hawai/ingredients
-  if(selectedVal.length!==0) {
-    $.getJSON("api/pizza/" + selectedVal + "/ingredients",
+        if (selectedVal.length !== 0) {
+            $.getJSON(
+                "api/pizza/" + selectedVal + "/ingredients",
 
-        function (data) {
-            $("input:checkbox").prop('checked', false);
-            $.each(data.ingredients, function (index, value) {
-                $('#' + value).prop('checked', true);
-            });
+                function (data) {
+                    $("input:checkbox").prop("checked", false);
+                    $.each(data.ingredients, function (index, value) {
+                        $("#" + value).prop("checked", true);
+                    });
+                }
+            );
         }
-    );
-}
     });
-    $('#myform :checkbox').change(function() {
+    $("#myform :checkbox").change(function () {
         upDatePizzaSelection();
     });
 });
