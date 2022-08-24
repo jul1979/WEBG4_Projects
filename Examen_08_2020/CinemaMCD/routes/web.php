@@ -25,4 +25,4 @@ Route::get('/', function () {
 Route::resource('shows', ShowController::class);
 Route::resource('movies', MovieController::class);
 Route::resource('rooms', RoomController::class);
-Route::post('/movies/{idMovie}/liker',[MovieController::class,'likerUnFilm'])->name('liker');
+Route::post('/movies/{idMovie}/liker', [MovieController::class, 'likerUnFilm'])->name('liker');

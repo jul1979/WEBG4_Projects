@@ -14,7 +14,6 @@ class Movie extends Model
     {
         $movies = DB::select('SELECT * from movie');
         return $movies;
-
     }
 
     public static function getMovieById($movie)
@@ -25,9 +24,8 @@ class Movie extends Model
 
     public static function incrementLikes($movieId)
     {
-         DB::table('movie')
+        DB::table('movie')
             ->where('idMovie', $movieId)
             ->increment('voteCount', 1);
-
     }
 }
